@@ -1,8 +1,12 @@
 # DX::Grid
 
-The `DX::Grid` module provides methods for converting between lat/long coordinate pairs and amateur radio Maidenhead grid locators. It can also validate grid coordinators.
+The `DX::Grid` module provides methods for converting between lat/long coordinate pairs and amateur radio Maidenhead grid locators. It can also validate the format of a grid string.
 
 The supported grid formats are 4-character (e.g. `FN22`) and 6-character (e.g. `FN32ab`).
+
+The range of grids is from `AA00aa` to `RR99xx`.
+
+You can learn more about grid squares from [the ARRL](http://www.arrl.org/grid-squares).
 
 ## Installation
 
