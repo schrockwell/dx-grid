@@ -75,7 +75,7 @@ module DX
       return [lat, lon]
     end
 
-    def self.is_grid?(str)
+    def self.valid?(str)
       str = str.to_s
 
       if str.length == 4
@@ -100,7 +100,7 @@ private
     end
 
     def self.validate_grid!(grid)
-      if !is_grid?(grid)
+      if !valid?(grid)
         raise ArgumentError, "Invalid grid: '#{grid}'"
       end
     end

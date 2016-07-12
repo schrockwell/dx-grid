@@ -28,8 +28,6 @@ class DX::GridTest < Minitest::Test
   def test_decode
     assert_equal [0.5, 1.0], DX::Grid.decode('JJ00')
     assert_equal [42.5, -75.0], DX::Grid.decode('FN22')
-    puts DX::Grid.decode('FN22ab')
-
 
     assert_in_delta -77.854, DX::Grid.decode('AB12cd')[0], 0.001
     assert_in_delta -177.791, DX::Grid.decode('AB12cd')[1], 0.001
@@ -46,21 +44,21 @@ class DX::GridTest < Minitest::Test
     end
   end
 
-  def test_is_grid
-    assert DX::Grid.is_grid?('FN22')
-    assert DX::Grid.is_grid?('fn22')
-    assert DX::Grid.is_grid?('AA00aa')
-    assert DX::Grid.is_grid?('ab12xx')
-    assert DX::Grid.is_grid?('MO00OO')
-    assert DX::Grid.is_grid?('lo00ol')
+  def test_valid
+    assert DX::Grid.valid?('FN22')
+    assert DX::Grid.valid?('fn22')
+    assert DX::Grid.valid?('AA00aa')
+    assert DX::Grid.valid?('ab12xx')
+    assert DX::Grid.valid?('MO00OO')
+    assert DX::Grid.valid?('lo00ol')
 
-    assert !DX::Grid.is_grid?('FN')
-    assert !DX::Grid.is_grid?('st12')
-    assert !DX::Grid.is_grid?('fn22yz')
-    assert !DX::Grid.is_grid?('hello world')
-    assert !DX::Grid.is_grid?(nil)
-    assert !DX::Grid.is_grid?('')
-    assert !DX::Grid.is_grid?(5)
-    assert !DX::Grid.is_grid?(Math::PI)
+    assert !DX::Grid.valid?('FN')
+    assert !DX::Grid.valid?('st12')
+    assert !DX::Grid.valid?('fn22yz')
+    assert !DX::Grid.valid?('hello world')
+    assert !DX::Grid.valid?(nil)
+    assert !DX::Grid.valid?('')
+    assert !DX::Grid.valid?(5)
+    assert !DX::Grid.valid?(Math::PI)
   end
 end

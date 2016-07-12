@@ -44,21 +44,21 @@ DX::Grid.encode([42.481076, -75.037847], :length => 6) # => 'FN22cd'
 ### Validating a Grid
 
 ```ruby
-DX::Grid.is_grid?('FN22') # => true
-DX::Grid.is_grid?('fn22') # => true
-DX::Grid.is_grid?('AA00aa') # => true
-DX::Grid.is_grid?('ab12xx') # => true
-DX::Grid.is_grid?('MO00OO') # => true
-DX::Grid.is_grid?('lo00ol') # => true
+DX::Grid.valid?('FN22') # => true
+DX::Grid.valid?('fn22') # => true
+DX::Grid.valid?('AA00aa') # => true
+DX::Grid.valid?('ab12xx') # => true
+DX::Grid.valid?('MO00OO') # => true
+DX::Grid.valid?('lo00ol') # => true
 
-DX::Grid.is_grid?('FN') # => false
-DX::Grid.is_grid?('st12') # => false
-DX::Grid.is_grid?('fn22yz') # => false
-DX::Grid.is_grid?('hello world') # => false
-DX::Grid.is_grid?(nil) # => false
-DX::Grid.is_grid?('') # => false
-DX::Grid.is_grid?(5) # => false
-DX::Grid.is_grid?(Math::PI) # => false
+DX::Grid.valid?('FN') # => false
+DX::Grid.valid?('st12') # => false
+DX::Grid.valid?('fn22yz') # => false
+DX::Grid.valid?('hello world') # => false
+DX::Grid.valid?(nil) # => false
+DX::Grid.valid?('') # => false
+DX::Grid.valid?(5) # => false
+DX::Grid.valid?(Math::PI) # => false
 ```
 
 ## Contributing
