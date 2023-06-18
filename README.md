@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/dx-grid.svg)](https://badge.fury.io/rb/dx-grid)
+
 # DX::Grid
 
 The `DX::Grid` module provides methods for converting between lat/long coordinate pairs and amateur radio Maidenhead grid locators. It can also validate the format of a grid string.
